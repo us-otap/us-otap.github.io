@@ -1,0 +1,16 @@
+.center-text-desc {
+    width: 50%;
+    font-size: 1.5vw;
+    color: white;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.center-title {
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+.center-text {
+    margin-top: 5%;
+}

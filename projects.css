@@ -1,0 +1,33 @@
+.projects-list {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+    margin-top: 4%;
+    justify-items: center;
+}
+
+.project {
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.8); 
+    border-radius: 0.5em;
+    padding: 1em;
+    width: 7em; 
+    height: 2em; 
+    color: white;
+    font-size: 2vw;
+    font-family: "Comic Sans MS", cursive;
+}   
+
+.project h2 {
+    display: inline;
+    vertical-align: middle;
+}
+
+.body-title {
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 0;
+    font-size: 5vw;
+    text-align: center;
+}
