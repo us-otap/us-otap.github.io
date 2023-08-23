@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to Your Dashboard</h1>
+    
+    <div id="user-info">
+        <!-- Display user's display name and email -->
+    </div>
+    
+    <button id="sign-out-btn">Sign Out</button>
+
+    <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js"></script>
+    <script>
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCqdRFXYfChIyW0Mhu-iE9hxhp_Fe2VgdU",
+            authDomain: "otap-website-auth.firebaseapp.com",
+            projectId: "otap-website-auth",
+            storageBucket: "otap-website-auth.appspot.com",
+            messagingSenderId: "889589100403",
+            appId: "1:889589100403:web:1f171ee5454fb2cf831f06",
+            measurementId: "G-7CRCM9B89S"
+		};
+
+        firebase.initializeApp(firebaseConfig);
+
+        // Check authentication state
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                // User is authenticated, show dashboard content
+                document.getElementById('user-info').innerHTML = `
+                    <p>Hello, ${user.displayName}!</p>
+                    <p>Email: ${user.email}</p>
+                `;
+
+                // Sign out button event listener
+                const signOutButton = document.getElementById('sign-out-btn');
+                signOutButton.addEventListener('click', () => {
+                    firebase.auth().signOut()
+                        .then(() => {
+                            window.location.href = 'login.html'; // Redirect to login page after sign out
+                        })
+                        .catch(error => {
+                            console.error('Sign-out error:', error);
+                            alert(error);
+                        });
+                });
+            } else {
+                // User is not authenticated, redirect to login page
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+</body>
+</html>

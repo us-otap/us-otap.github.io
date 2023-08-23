@@ -64,19 +64,19 @@
 </div>
 <br>
 </body>
-	<script type="module">
+		<script type="module">
 	  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
 	  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
 	  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
-      const firebaseConfig = {
-            apiKey: "AIzaSyCWzqNWmEA3BhaEuxljJ2TvJKhyJzK1x7o",
-            authDomain: "us-otap.firebaseapp.com",
-            projectId: "us-otap",
-            storageBucket: "us-otap.appspot.com",
-            messagingSenderId: "188991725449",
-            appId: "1:188991725449:web:7af5d3f8f75980a8614b58",
-            measurementId: "G-8PJ4TTN59N"
-        };
+	  const firebaseConfig = {
+		apiKey: "AIzaSyCqdRFXYfChIyW0Mhu-iE9hxhp_Fe2VgdU",
+		authDomain: "otap-website-auth.firebaseapp.com",
+		projectId: "otap-website-auth",
+		storageBucket: "otap-website-auth.appspot.com",
+		messagingSenderId: "889589100403",
+		appId: "1:889589100403:web:1f171ee5454fb2cf831f06",
+		measurementId: "G-7CRCM9B89S"
+		};
 
 	  const app = initializeApp(firebaseConfig);
 	  const analytics = getAnalytics(app);
@@ -110,6 +110,7 @@
 		    const user = userCredential.user;
 		    console.log(user);
 		    alert(user.email+" Login successfully!!!");
+			window.location.href = 'user_dashboard.html';
 		    document.getElementById('logout').style.display = 'block';
 		  })
 		  .catch((error) => {
