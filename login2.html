@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css"/>
+    <title>OTAP</title>
+</head>
+<body>    
+    <div class="background-container">
+        <div class = "dimmed-overlay">
+            <div class = header>
+                <div class = "title">
+                    <h1>OTAP</h1>
+                </div>
+
+                <div class="menu">
+                    <a class = option href = index.html>Home</a>
+                    <a class = option href = projects.html>Projects</a>
+                    <a class = option href = goals.html>Goals</a>
+                    <a class = option href = about.html>About Us</a>
+                    <a id = "current" class = option href = login.html>login</a>
+                </div>
+            </div>
+
+            <div class = center-text>
+                <div class = "outer-form-group">
+                    <div class = "main-label"><strong>Register</strong></div>
+                    <div class="form-group">
+                        <label for="first-name">First name</label>
+                        <input type="text" name="first-name" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last-name">Last name</label>
+                        <input type="text" name="last-name" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" class="form-control">
+                    </div>
+
+                    <button type="button" id="register" name="register" class="form-btn">Register Now</button>
+                </div>
+                <div id = "spacer">____________</div>
+                <div class = "outer-form-group">
+                    <div class = "main-label"><strong>Login</strong></div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="login_email" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="login_password" class="form-control"">
+                    </div>
+
+                    <button type="button" id="login" name="login" class="form-btn">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .center-text {
+            margin-top: 8%;
+            justify-content: center;
+            display: flex;
+        }
+
+        .outer-form-group {
+            padding-left: 5vw;
+            padding-right: 5vw;
+            border: 3px solid green;
+            border-radius: 15%;
+            padding-bottom: 1%;
+            padding-top: 1%;
+            background-color: grey;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin: 5%;
+            padding: 2%;
+        }
+
+        .form-control {
+            font-size: 1vw;
+            background-color: lightblue;
+        }
+
+        .form-btn {
+            background-color: green;
+            padding: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 1.5vw;
+            margin-top: 2vh;
+        }
+
+        .form-btn:hover {
+            background-color: lightgreen;
+        }
+
+        label {
+            font-size: 1.5vw;
+            text-align: left;
+        }
+
+        input {
+            padding: 4%;
+        }
+
+        .main-label {
+            margin-bottom: 12%;
+            color: lightblue;
+        }
+
+        #spacer {
+            color: transparent;
+        }
+
+    </style>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+        const firebaseConfig = {
+          apiKey: "AIzaSyCqdRFXYfChIyW0Mhu-iE9hxhp_Fe2VgdU",
+          authDomain: "otap-website-auth.firebaseapp.com",
+          projectId: "otap-website-auth",
+          storageBucket: "otap-website-auth.appspot.com",
+          messagingSenderId: "889589100403",
+          appId: "1:889589100403:web:1f171ee5454fb2cf831f06",
+          measurementId: "G-7CRCM9B89S"
+          };
+  
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth();
+        console.log(app);
+  
+        document.getElementById("register").addEventListener("click", function() {
+            var email =  document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+              const user = userCredential.user;
+              console.log(user);
+              alert(user.email + " registered successfully")
+            })
+            .catch((error) => {
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              console.log(errorMessage);
+              alert(error);
+            });		  		  
+        }); 
+        document.getElementById("login").addEventListener("click", function() {
+            var email =  document.getElementById("login_email").value;
+            var password = document.getElementById("login_password").value;
+  
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+              const user = userCredential.user;
+              console.log(user);
+              window.location.href = 'user_dashboard.html';
+              document.getElementById('logout').style.display = 'block';
+            })
+            .catch((error) => {
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              console.log(errorMessage);
+            });		  		  
+        }); 
+        /*document.getElementById("logout").addEventListener("click", function() {
+            signOut(auth).then(() => {
+                console.log('Sign-out successful.');
+                document.getElementById('logout').style.display = 'none';
+              }).catch((error) => {
+                console.log('An error happened.');
+              });		  		  
+        });*/
+      </script>
+</body>
+</html>

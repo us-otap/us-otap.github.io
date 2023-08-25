@@ -64,7 +64,7 @@
 </div>
 <br>
 </body>
-		<script type="module">
+	<script type="module">
 	  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
 	  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
 	  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
@@ -92,7 +92,6 @@
 		  .then((userCredential) => {
 		    const user = userCredential.user;
 		    console.log(user);
-		    alert("Registration successfully!!");
 		  })
 		  .catch((error) => {
 		    const errorCode = error.code;

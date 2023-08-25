@@ -10,12 +10,11 @@
         <!-- Display user's display name and email -->
     </div>
     
-    <button id="sign-out-btn">Sign Out</button>
+    <button id="logout">Log out</button>
 
-    <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js"></script>
-    <script>
-        // Initialize Firebase
+    <script type = "module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
         const firebaseConfig = {
             apiKey: "AIzaSyCqdRFXYfChIyW0Mhu-iE9hxhp_Fe2VgdU",
             authDomain: "otap-website-auth.firebaseapp.com",
@@ -26,32 +25,29 @@
             measurementId: "G-7CRCM9B89S"
 		};
 
-        firebase.initializeApp(firebaseConfig);
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
 
         // Check authentication state
-        firebase.auth().onAuthStateChanged(user => {
+        auth.onAuthStateChanged(user => {
             if (user) {
-                // User is authenticated, show dashboard content
                 document.getElementById('user-info').innerHTML = `
                     <p>Hello, ${user.displayName}!</p>
                     <p>Email: ${user.email}</p>
                 `;
 
-                // Sign out button event listener
-                const signOutButton = document.getElementById('sign-out-btn');
-                signOutButton.addEventListener('click', () => {
-                    firebase.auth().signOut()
-                        .then(() => {
-                            window.location.href = 'login.html'; // Redirect to login page after sign out
-                        })
-                        .catch(error => {
-                            console.error('Sign-out error:', error);
-                            alert(error);
-                        });
+                const signOutButton = document.getElementById('logout');
+                signOutButton.addEventListener("click", function() {
+                    signOut(auth).then(() => {
+                        console.log('Log out successful.');
+                        window.location.href = 'index.html';
+89                        //document.getElementById('logout').style.display = 'none';
+                        }).catch((error) => {
+                        console.log('An error happened.');
+                    });		  		  
                 });
             } else {
-                // User is not authenticated, redirect to login page
-                window.location.href = 'login.html';
+                
             }
         });
     </script>
