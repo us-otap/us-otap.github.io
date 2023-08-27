@@ -7,7 +7,6 @@
     <h1>Welcome to Your Dashboard</h1>
     
     <div id="user-info">
-        <!-- Display user's display name and email -->
     </div>
     
     <button id="logout">Log out</button>
@@ -15,6 +14,11 @@
     <script type = "module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
         import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+        import { updateDashboard } from "./database.js";
+        import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js';
+
+        
+
         const firebaseConfig = {
             apiKey: "AIzaSyCqdRFXYfChIyW0Mhu-iE9hxhp_Fe2VgdU",
             authDomain: "otap-website-auth.firebaseapp.com",
@@ -27,14 +31,12 @@
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth();
+        const db = getDatabase(app);
 
         // Check authentication state
         auth.onAuthStateChanged(user => {
             if (user) {
-                document.getElementById('user-info').innerHTML = `
-                    <p>Hello, ${user.displayName}!</p>
-                    <p>Email: ${user.email}</p>
-                `;
+                updateDashboard(db, user.uid);
 
                 const signOutButton = document.getElementById('logout');
                 signOutButton.addEventListener("click", function() {

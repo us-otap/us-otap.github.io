@@ -28,12 +28,12 @@
                     <div class = "main-label"><strong>Register</strong></div>
                     <div class="form-group">
                         <label for="first-name">First name</label>
-                        <input type="text" name="first-name" class="form-control">
+                        <input type="text" name="first-name" id = "first-name" class="form-control">
                     </div>
 
                     <div class="form-group">
                         <label for="last-name">Last name</label>
-                        <input type="text" name="last-name" class="form-control">
+                        <input type="text" name="last-name" id = "last-name" class="form-control">
                     </div>
 
                     <div class="form-group">
@@ -128,67 +128,8 @@
         }
 
     </style>
-
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
-        const firebaseConfig = {
-          apiKey: "AIzaSyCqdRFXYfChIyW0Mhu-iE9hxhp_Fe2VgdU",
-          authDomain: "otap-website-auth.firebaseapp.com",
-          projectId: "otap-website-auth",
-          storageBucket: "otap-website-auth.appspot.com",
-          messagingSenderId: "889589100403",
-          appId: "1:889589100403:web:1f171ee5454fb2cf831f06",
-          measurementId: "G-7CRCM9B89S"
-          };
-  
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const auth = getAuth();
-        console.log(app);
-  
-        document.getElementById("register").addEventListener("click", function() {
-            var email =  document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-            createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-              const user = userCredential.user;
-              console.log(user);
-              alert(user.email + " registered successfully")
-            })
-            .catch((error) => {
-              const errorCode = error.code;
-              const errorMessage = error.message;
-              console.log(errorMessage);
-              alert(error);
-            });		  		  
-        }); 
-        document.getElementById("login").addEventListener("click", function() {
-            var email =  document.getElementById("login_email").value;
-            var password = document.getElementById("login_password").value;
-  
-            signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-              const user = userCredential.user;
-              console.log(user);
-              window.location.href = 'user_dashboard.html';
-              document.getElementById('logout').style.display = 'block';
-            })
-            .catch((error) => {
-              const errorCode = error.code;
-              const errorMessage = error.message;
-              console.log(errorMessage);
-            });		  		  
-        }); 
-        /*document.getElementById("logout").addEventListener("click", function() {
-            signOut(auth).then(() => {
-                console.log('Sign-out successful.');
-                document.getElementById('logout').style.display = 'none';
-              }).catch((error) => {
-                console.log('An error happened.');
-              });		  		  
-        });*/
-      </script>
+    <script  type="module" src = "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"></script>
+    <script  type="module" src = "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js"></script>
+    <script type="module" src = "login.js"></script>
 </body>
 </html>
