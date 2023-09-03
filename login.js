@@ -24,23 +24,32 @@ document.getElementById("register").addEventListener("click", function() {
     const lastName = document.getElementById("last-name").value;
     const email =  document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    
-
+    const volunteerHours = 0;
+    const volunteerHoursElementId = "volunteer-hours";
 
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
 
+
         const userData = {
             firstName: firstName,
             lastName: lastName,
             email: email,
-            volunteerHours: 0,
-            password: password,
+            volunteerHours: volunteerHours, 
         };
 
         set(ref(db, 'users/' + user.uid), userData); 
+
+
+        const volunteerHoursElement = document.createElement("p");
+        volunteerHoursElement.id = volunteerHoursElementId;
+        volunteerHoursElement.innerHTML = `${volunteerHoursElementId.charAt(0).toUpperCase() + volunteerHoursElementId.slice(1)}: ${volunteerHours} hours`;
+
+
+        document.body.appendChild(volunteerHoursElement);
+
         document.getElementById("first-name").value = '';
         document.getElementById("last-name").value = '';
         document.getElementById("email").value = '';
