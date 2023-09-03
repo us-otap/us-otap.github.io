@@ -25,14 +25,23 @@ document.getElementById("register").addEventListener("click", function() {
     const email =  document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
+    const volunteerHours = 0;
+    const volunteerHoursId = "volunteerHours";
+
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
-        const volunteerHours = 0;
-        set(ref(db, 'users/' + user.uid + '/volunteerHours'), volunteerHours);
 
-        writeUserData(db, user.uid, firstName, lastName, email);
+        const userData = {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            [volunteerHoursId]: volunteerHours, 
+        };
+
+        set(ref(db, 'users/' + user.uid), userData); 
+        document.getElementById(volunteerHoursId).innerText = `${volunteerHoursId.charAt(0).toUpperCase() + volunteerHoursId.slice(1)}: ${volunteerHours} hours`;
 
         document.getElementById("first-name").value = '';
         document.getElementById("last-name").value = '';
@@ -47,6 +56,7 @@ document.getElementById("register").addEventListener("click", function() {
         alert(error);
     });
 });
+
 
 
 document.getElementById("login").addEventListener("click", function() {
