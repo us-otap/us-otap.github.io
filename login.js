@@ -17,40 +17,35 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth();
-console.log(app);
-
 const db = getDatabase(app);
 
 document.getElementById("register").addEventListener("click", function() {
-  const firstName = document.getElementById("first-name").value;
-  const lastName = document.getElementById("last-name").value;
-  const email =  document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  
-  createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-      const user = userCredential.user;
-      console.log(user);
+    const firstName = document.getElementById("first-name").value;
+    const lastName = document.getElementById("last-name").value;
+    const email =  document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-      const volunteerHoursElement = document.createElement('p');
-      volunteerHoursElement.id = 'volunteerHours';
-      volunteerHoursElement.innerHTML = 'Volunteer Hours: 0 hours';
-      document.getElementById('user-info').appendChild(volunteerHoursElement);
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        const volunteerHours = 0;
+        set(ref(db, 'users/' + user.uid + '/volunteerHours'), volunteerHours);
 
-      writeUserData(db, user.uid, firstName, lastName, email);
+        writeUserData(db, user.uid, firstName, lastName, email);
 
-      document.getElementById("first-name").value = '';
-      document.getElementById("last-name").value = '';
-      document.getElementById("email").value = '';
-      document.getElementById("password").value = '';
-      alert(user.email + " registered successfully");
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.log(errorMessage);
-    alert(error);
-  });		  		  
+        document.getElementById("first-name").value = '';
+        document.getElementById("last-name").value = '';
+        document.getElementById("email").value = '';
+        document.getElementById("password").value = '';
+        alert(user.email + " registered successfully");
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage);
+        alert(error);
+    });
 });
 
 
