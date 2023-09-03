@@ -24,9 +24,8 @@ document.getElementById("register").addEventListener("click", function() {
     const lastName = document.getElementById("last-name").value;
     const email =  document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const volunteerHours = document.getElementById('volunteerHours').value;
 
-    const volunteerHours = 0;
-    const volunteerHoursId = "volunteerHours";
 
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
@@ -42,12 +41,7 @@ document.getElementById("register").addEventListener("click", function() {
         };
 
         set(ref(db, 'users/' + user.uid), userData); 
-        const volunteerHoursElement = document.getElementById('volunteerHours');
-    if (volunteerHoursElement) {
-        volunteerHoursElement.innerText = `${volunteerHoursId.charAt(0).toUpperCase() + volunteerHoursId.slice(1)}: ${volunteerHours} hours`;
-    } else {
-        console.error("Element with id 'volunteerHours' not found in the DOM.");
-    }
+        document.getElementById("volunteerHours").value = '';
         document.getElementById("first-name").value = '';
         document.getElementById("last-name").value = '';
         document.getElementById("email").value = '';
