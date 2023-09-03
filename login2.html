@@ -8,32 +8,32 @@
 </head>
 <body>    
     <div class="background-container">
-        <div class = "dimmed-overlay">
-            <div class = header>
-                <div class = "title">
+        <div class="dimmed-overlay">
+            <div class="header">
+                <div class="title">
                     <h1>OTAP</h1>
                 </div>
 
                 <div class="menu">
-                    <a class = option href = index.html>Home</a>
-                    <a class = option href = projects.html>Projects</a>
-                    <a class = option href = goals.html>Goals</a>
-                    <a class = option href = about.html>About Us</a>
-                    <a id = "current" class = option href = login.html>login</a>
+                    <a class="option" href="index.html">Home</a>
+                    <a class="option" href="projects.html">Projects</a>
+                    <a class="option" href="goals.html">Goals</a>
+                    <a class="option" href="about.html">About Us</a>
+                    <a id="current" class="option" href="login.html">Login</a>
                 </div>
             </div>
 
-            <div class = center-text>
-                <div class = "outer-form-group">
-                    <div class = "main-label"><strong>Register</strong></div>
+            <div class="center-text">
+                <div class="outer-form-group">
+                    <div class="main-label"><strong>Register</strong></div>
                     <div class="form-group">
-                        <label for="first-name">First name</label>
-                        <input type="text" name="first-name" id = "first-name" class="form-control">
+                        <label for="first-name">First Name</label>
+                        <input type="text" name="first-name" id="first-name" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label for="last-name">Last name</label>
-                        <input type="text" name="last-name" id = "last-name" class="form-control">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" name="last-name" id="last-name" class="form-control">
                     </div>
 
                     <div class="form-group">
@@ -46,11 +46,11 @@
                         <input type="password" name="password" id="password" class="form-control">
                     </div>
 
-                    <button type="button" id="register" name="register" class="form-btn">Register Now</button>
+                    <button type="button" id="register" name="register" class="form-btn">Register</button>
                 </div>
-                <div id = "spacer">____________</div>
-                <div class = "outer-form-group">
-                    <div class = "main-label"><strong>Login</strong></div>
+                <div id="spacer">____________</div>
+                <div class="outer-form-group">
+                    <div class="main-label"><strong>Login</strong></div>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="text" name="email" id="login_email" class="form-control">
@@ -58,7 +58,7 @@
 
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" name="password" id="login_password" class="form-control"">
+                        <input type="password" name="password" id="login_password" class="form-control">
                     </div>
 
                     <button type="button" id="login" name="login" class="form-btn">Login</button>
@@ -73,61 +73,62 @@
             justify-content: center;
             display: flex;
         }
-
+    
         .outer-form-group {
-            padding-left: 5vw;
-            padding-right: 5vw;
-            border: 3px solid green;
-            border-radius: 15%;
-            padding-bottom: 1%;
-            padding-top: 1%;
-            background-color: grey;
+            padding: 2% 5%;
+            border: 3px solid white;
+            border-radius: 15px;
+            background-color: transparent; /* Set the background to transparent */
         }
-
+    
         .form-group {
             display: flex;
             flex-direction: column;
-            margin: 5%;
-            padding: 2%;
+            margin: 2% 0;
         }
-
+    
         .form-control {
             font-size: 1vw;
-            background-color: lightblue;
+            background-color: #f0f0f0;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
         }
-
+    
         .form-btn {
-            background-color: green;
-            padding: 20px;
-            padding-left: 30px;
-            padding-right: 30px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
             font-size: 1.5vw;
             margin-top: 2vh;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
         }
-
+    
         .form-btn:hover {
-            background-color: lightgreen;
+            background-color: #45a049;
         }
-
+    
         label {
             font-size: 1.5vw;
             text-align: left;
         }
-
+    
         input {
-            padding: 4%;
+            padding: 10px;
         }
-
+    
         .main-label {
-            margin-bottom: 12%;
-            color: lightblue;
+            margin-bottom: 6px;
+            color: #f0f0f0;
         }
-
+    
         #spacer {
             color: transparent;
         }
-
     </style>
+    
     <script  type="module" src = "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"></script>
     <script  type="module" src = "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js"></script>
     <script type="module" src = "login.js"></script>

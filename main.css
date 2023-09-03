@@ -85,3 +85,45 @@ h1 {
 #current {
     opacity: 0.3;
 }
+
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2% 5%;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.personal-info,
+.future-projects,
+.ongoing-projects,
+.service-hours {
+    width: 48%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2%;
+    margin: 1%;
+    border-radius: 0.5em;
+    box-sizing: border-box;
+}
+
+.personal-info h2,
+.future-projects h2,
+.ongoing-projects h2,
+.service-hours h2 {
+    font-size: 2rem;
+}
+
+.project {
+    margin-bottom: 1rem;
+}
+
+.project h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.project p {
+    font-size: 1rem;
+    margin: 0.2rem 0;
+}

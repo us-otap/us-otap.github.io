@@ -64,6 +64,25 @@ z    })
     });		  		  
 }); 
 
+export function updateDashboard(db, userID) {
+  const data = ref(db, 'users/' + userID);
+  onValue(data, (snapshot) => {
+      const userData = snapshot.val();
+      console.log(userData);
+      const volunteerHours = userData["volunteerHours"] || 0;
+      
+      // Update user info
+      document.getElementById('user-email').textContent = userData["email"];
+      document.getElementById('user-name').textContent = `${userData["firstName"]} ${userData["lastName"]}`;
+
+      // Update volunteer hours
+      document.getElementById('volunteer-hours').textContent = `Volunteer Hours: ${volunteerHours} hours`;
+  });
+}
+
+
+
+
 
 
 /*document.getElementById("logout").addEventListener("click", function() {

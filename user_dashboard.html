@@ -1,15 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="profile.css">
     <title>User Dashboard</title>
 </head>
 <body>
-    <h1>Welcome to Your Dashboard</h1>
-    
-    <div id="user-info">
+    <div class="background-container">
+        <div class="dimmed-overlay">
+            <div class="header">
+                <div class="title">
+                    <h1>OTAP</h1>
+                </div>
+
+                <div class="menu">
+                    <a class="option" href="index.html">Home</a>
+                    <a class="option" href="projects.html">Projects</a>
+                    <a class="option" href="goals.html">Goals</a>
+                    <a class="option" href="about.html">About Us</a>
+                    <a id="current" class="option" href="profile.html">Profile</a>
+                </div>
+            </div>
+            
+            <div class="dashboard-container">
+                <div class="personal-info">
+                    <h2>Your Personal Info</h2>
+                    <p>Email: <span id="user-email"></span></p>
+                    <p>Name: <span id="user-name"></span></p>
+                    <p>Volunteer Hours: <span id="volunteer-hours"></span> hours</p>
+                </div>
+                <div class="future-projects">
+                    <h2>Future Projects</h2>
+                    <div class="project">
+                        <h3>Project 1</h3>
+                        <p>Date: October 10, 2023</p>
+                        <p>Location: Community Center</p>
+                        <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="ongoing-projects">
+                    <h2>Ongoing Projects</h2>
+                    <div class="project">
+                        <h3>Project A</h3>
+                        <p>Started: September 1, 2023</p>
+                        <p>Location: Community Center</p>
+                        <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="service-hours">
+                    <h2>Your Service Hours</h2>
+                    <p>Total Hours: <span id="total-hours"></span></p>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <button id="logout">Log out</button>
+
 
     <script type = "module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
@@ -32,8 +79,6 @@
         const app = initializeApp(firebaseConfig);
         const auth = getAuth();
         const db = getDatabase(app);
-
-        // Check authentication state
         auth.onAuthStateChanged(user => {
             if (user) {
                 updateDashboard(db, user.uid);
