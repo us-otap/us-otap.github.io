@@ -24,7 +24,7 @@ document.getElementById("register").addEventListener("click", function() {
     const lastName = document.getElementById("last-name").value;
     const email =  document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    const volunteerHours = document.getElementById('volunteerHours').value;
+    
 
 
     createUserWithEmailAndPassword(auth, email, password)
@@ -36,12 +36,11 @@ document.getElementById("register").addEventListener("click", function() {
             firstName: firstName,
             lastName: lastName,
             email: email,
-            volunteerHours: volunteerHours,
+            volunteerHours: 0,
             password: password,
         };
 
         set(ref(db, 'users/' + user.uid), userData); 
-        document.getElementById("volunteerHours").value = '';
         document.getElementById("first-name").value = '';
         document.getElementById("last-name").value = '';
         document.getElementById("email").value = '';
