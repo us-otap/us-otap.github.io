@@ -37,12 +37,17 @@ document.getElementById("register").addEventListener("click", function() {
             firstName: firstName,
             lastName: lastName,
             email: email,
-            [volunteerHoursId]: volunteerHours, 
+            volunteerHours: volunteerHours,
+            password: password,
         };
 
         set(ref(db, 'users/' + user.uid), userData); 
-        document.getElementById(volunteerHoursId).innerText = `${volunteerHoursId.charAt(0).toUpperCase() + volunteerHoursId.slice(1)}: ${volunteerHours} hours`;
-
+        const volunteerHoursElement = document.getElementById('volunteerHours');
+    if (volunteerHoursElement) {
+        volunteerHoursElement.innerText = `${volunteerHoursId.charAt(0).toUpperCase() + volunteerHoursId.slice(1)}: ${volunteerHours} hours`;
+    } else {
+        console.error("Element with id 'volunteerHours' not found in the DOM.");
+    }
         document.getElementById("first-name").value = '';
         document.getElementById("last-name").value = '';
         document.getElementById("email").value = '';
