@@ -1,10 +1,11 @@
 import { getDatabase, ref, set, onValue } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-database.js';
 
-export function writeUserData(db, userId, firstName, lastName, email) {
+export function writeUserData(db, userId, firstName, lastName, email, volunteerHours) {
     set(ref(db, 'users/' + userId), {
       firstName: firstName,
       lastName: lastName,
-      email: email
+      email: email,
+      volunteerHours: 0
     });
 }
 
@@ -13,8 +14,11 @@ export function updateDashboard(db, userID) {
     onValue(data, (snapshot) => {
         const userData = snapshot.val();
         console.log(userData);
+        const volunteerHours = userData["volunteerHours"] || 0;
         document.getElementById('user-info').innerHTML = `
             <p>Email: ${userData["email"]}!</p>
             <p>Hello ${userData["firstName"]} ${userData["lastName"]}</p>`;
+        document.getElementById('volunteer-hours').innerHTML = `
+            <p>Volunteer Hours: ${volunteerHours} hours</p>`;
     });
-}
+  }
