@@ -5,7 +5,7 @@ export function writeUserData(db, userId, firstName, lastName, email, volunteerH
       firstName: firstName,
       lastName: lastName,
       email: email,
-      volunteerHours: 0
+      volunteerHours: volunteerHours
     });
 }
 
@@ -18,7 +18,11 @@ export function updateDashboard(db, userID) {
         document.getElementById('user-info').innerHTML = `
             <p>Email: ${userData["email"]}!</p>
             <p>Hello ${userData["firstName"]} ${userData["lastName"]}</p>`;
-        document.getElementById('volunteer-hours').innerHTML = `
-            <p>Volunteer Hours: ${volunteerHours} hours</p>`;
+        const volunteerHoursElement = document.getElementById('volunteer-hours');
+        if (volunteerHoursElement) {
+            volunteerHoursElement.innerText = `Volunteer Hours: ${volunteerHours} hours`;
+        } else {
+            console.error("Element with id 'volunteer-hours' not found in the DOM.");
+        }
     });
-  }
+}
