@@ -24,9 +24,10 @@
     background-color: rgba(0, 68, 0, 0.6);
     padding: 1em;
     border-radius: 0.5rem;
-    margin: 1rem;
+    margin: 5rem;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 0.5rem;
+    left: 15%;
 }
 
 .ongoing-projects h2 {
@@ -85,9 +86,10 @@
     background-color: rgba(0, 68, 0, 0.6); 
     padding: 1em;
     text-align: center;
-    margin: 1rem;
+    margin: 5rem;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 0.5rem;
+    right: 15%;
 }
 
 .service-hours h2 {
@@ -105,17 +107,18 @@
     top: 1;
     right: 0;
     width: 20%;
-    height: 50%; /* Set a fixed height for the container */
-    overflow-y: auto; /* Enable vertical scrolling if content exceeds the container height */
+    height: 50%; 
+    overflow-y: auto; 
     background-color: rgba(0, 68, 0, 0.6);
     padding: 1em;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 0.5rem;
-    margin: 1rem;
+    margin: 5rem;
     display: flex;
-    flex-direction: column; /* Set flex-direction to column to align items vertically */
-    justify-content: flex-start; /* Align items to the top */
-    align-items: center; /* Center items horizontally */
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center; 
+    right: 15%;
 }
 
 .future-projects h2 {
@@ -160,7 +163,8 @@
     border-radius: 0.5rem;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 0.5rem;
-    margin: 1rem;
+    margin: 5rem;
+    left: 15%;
 }
 
 .personal-info h2 {
