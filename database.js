@@ -18,11 +18,7 @@ export function updateDashboard(db, userID) {
         document.getElementById('user-info').innerHTML = `
             <p>Email: ${userData["email"]}!</p>
             <p>Hello ${userData["firstName"]} ${userData["lastName"]}</p>`;
-        const volunteerHoursElement = document.getElementById('volunteer-hours');
-        if (volunteerHoursElement) {
-            volunteerHoursElement.innerText = `Volunteer Hours: ${volunteerHours} hours`;
-        } else {
-            console.error("Element with id 'volunteer-hours' not found in the DOM.");
-        }
+        document.getElementById('volunteer-hours').innerHTML = `
+            <p>Volunteer Hours: ${volunteerHours} hours</p>`;
     });
 }

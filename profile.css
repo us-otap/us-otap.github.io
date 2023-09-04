@@ -16,28 +16,55 @@
     box-sizing: border-box;
 }
 
-.personal-info,
-.future-projects,
-.ongoing-projects,
-.service-hours {
-    flex-basis: calc(50% - 2rem);
-    padding: 1rem;
+.ongoing-projects {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20%;
+    background-color: rgba(0, 68, 0, 0.6);
+    padding: 1em;
+    border-radius: 0.5rem;
     margin: 1rem;
-    background-color: rgba(0, 68, 0, 0.4);
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 0.5rem;
 }
 
-.personal-info h2,
-.future-projects h2,
-.ongoing-projects h2,
-.service-hours h2 {
-    font-size: 1.5rem;
-    margin-top: 0;
+.ongoing-projects h2 {
+    font-size: 2vw;
+    margin-bottom: 0.5em;
+}
+
+.ongoing-projects .project {
+    padding: 1em;
+    text-align: center;
+    margin: 1em;
+    border-radius: 0.4em;
+}
+
+.ongoing-projects .project:nth-child(odd) {
+    background-color: rgba(0, 40, 0);
+}
+
+.ongoing-projects .project:nth-child(even) {
+    background-color: rgba(0, 40, 0);
+}
+
+.ongoing-projects .project:hover {
+    background-color: rgba(0, 20, 0);
+}
+
+.ongoing-projects a {
+    text-decoration: none;
+    color: white;
+}
+
+.ongoing-projects a:hover {
+    text-decoration: none;
 }
 
 .project {
     margin-top: 1rem;
+    color: rgba(0, 40, 0,);
 }
 
 .project h3 {
@@ -48,4 +75,100 @@
 .project p {
     font-size: 1rem;
     margin: 0.2rem 0;
+}
+
+.service-hours {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20%; 
+    background-color: rgba(0, 68, 0, 0.6); 
+    padding: 1em;
+    text-align: center;
+    margin: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+}
+
+.service-hours h2 {
+    font-size: 2vw; 
+    margin-bottom: 0.5em;
+}
+
+.service-hours p {
+    font-size: 1.5vw; 
+    margin: 0.2em 0;
+}
+
+.future-projects {
+    position: absolute;
+    top: 1;
+    right: 0;
+    width: 20%;
+    height: 50%; /* Set a fixed height for the container */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds the container height */
+    background-color: rgba(0, 68, 0, 0.6);
+    padding: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column; /* Set flex-direction to column to align items vertically */
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center; /* Center items horizontally */
+}
+
+.future-projects h2 {
+    font-size: 2vw;
+}
+
+.future-projects .project {
+    padding: 1em;
+    text-align: center;
+    margin: 1em;
+    border-radius: 0.4em;
+}
+
+.future-projects .project:nth-child(odd) {
+    background-color: rgba(0, 40, 0);
+}
+
+.future-projects .project:nth-child(even) {
+    background-color: rgba(0, 40, 0);
+}
+
+.future-projects .project:hover {
+    background-color: rgba(0, 20, 0);
+}
+
+.future-projects a {
+    text-decoration: none;
+    color: white;
+}
+
+.future-projects a:hover {
+    text-decoration: none;
+}
+
+.personal-info {
+    position: absolute;
+    top: 1;
+    left: 0;
+    width: 20%;
+    background-color: rgba(0, 68, 0, 0.6);
+    padding: 1em;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+
+.personal-info h2 {
+    font-size: 2vw;
+    margin-bottom: 0.5em;
+}
+
+.personal-info p {
+    font-size: 1.5vw;
+    margin: 0.2em 0;
 }
