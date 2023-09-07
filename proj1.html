@@ -7,32 +7,92 @@
     <link rel="stylesheet" href="about.css"/>
     <script src="main.js"></script>
     <title>About Us</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url("background_img4.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .dimmed-overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .project-box {
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 60%;
+            height: 400px; 
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 10px;
+            padding: 15px 35px; 
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px; 
+        }
+
+        .button:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+    </style>
 </head>
 <body>    
-    <div class="background-container">
-        <div class = "dimmed-overlay">
-            <div class = header>
-                <div class = "title">
-                    <h1>OTAP</h1>
-                </div>
-
-                <div class="menu">
-                    <a class = option href = index.html>Home</a>
-                    <a class = option href = projects.html>Projects</a>
-                    <a class = option href = goals.html>Goals</a>
-                    <a id = current class = option href = about.html>About Us</a>
-                    <a class="option" id="loginLink" href="login2.html">Register/Login</a>
-                    <a id="current" class="option" href="profile.html">Profile</a>
-                </div>
+    <div class="dimmed-overlay">
+        <div class="header">
+            <div class="title">
+                <h1>OTAP</h1>
             </div>
-
-            <div class = center-text>
-                <p class = "upper-text"><strong>project</strong></p>
-                <div class = center-text-desc>
-                    temp
-                </div>
+            <div class="menu">
+                <a class="option" href="index.html">Home</a>
+                <a class="option" href="projects.html">Projects</a>
+                <a class="option" href="goals.html">Goals</a>
+                <a id="current" class="option" href="about.html">About Us</a>
+                <a class="option" id="loginLink" href="login2.html">Register/Login</a>
+                <a id="current" class="option" href="profile.html">Profile</a>
             </div>
         </div>
+        <div class="project-box">
+            <h2>Project 1</h2>
+            <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus ac ante venenatis vehicula in eget libero.</p>
+        </div>
+        <a class="button" href="login2.html">Sign Up</a>
     </div>
 </body>
 </html>
