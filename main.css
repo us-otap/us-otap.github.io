@@ -92,3 +92,13 @@ h1 {
     width: auto;
     height: 2.5em;
 }
+
+@media screen and (max-width: 767px) {
+    .menu .option {
+        display: none;
+    }
+
+    .menu a[href="moreinfo.html"] {
+        display: inline-block;
+    }
+}
