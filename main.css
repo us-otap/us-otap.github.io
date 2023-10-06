@@ -103,12 +103,13 @@ h1 {
     }
 
     .menu a[href="index.html"] {
-        position: absolute;
-        top: 10px;
-        left: 10px;
+        margin-left: 10vw;
+        margin-top: 1%;
+        position: relative;
     }
 
     .menu a[id="current"] {
+        display: inline-block;
         position: absolute;
         top: 10px;
         left: 10px;
