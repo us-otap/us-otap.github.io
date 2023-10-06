@@ -101,4 +101,10 @@ h1 {
     .menu a[href="moreinfo.html"] {
         display: inline-block;
     }
+
+    .menu a[href="index.html"] {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
 }
