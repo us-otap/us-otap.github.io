@@ -1,0 +1,34 @@
+.center-text-desc {
+    width: 90%;
+    font-size: 4vw;
+    color: white;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.center-title {
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+.center-text {
+    margin-top: 5%;
+}
+
+.upper-text {
+    width: 100%;
+    font-size: 9vw;
+    text-align: center;
+    color: white;
+    margin-top: 6% ;
+}
+
+.background-container {
+    margin-top: 0%;
+    width: 100%;
+    height: 100%; 
+    background: url("background_img2.jpg");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,178 @@
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2% 5%;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.info-box {
+    width: 48%;
+    background-color: rgba(0, 128, 0, 0.7);
+    padding: 2%;
+    margin: 1%;
+    border-radius: 0.5em;
+    box-sizing: border-box;
+}
+
+.ongoing-projects {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20%;
+    background-color: rgba(0, 68, 0, 0.6);
+    padding: 1em;
+    border-radius: 0.5rem;
+    margin: 5rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    left: 15%;
+}
+
+.ongoing-projects h2 {
+    font-size: 2vw;
+    margin-bottom: 0.5em;
+}
+
+.ongoing-projects .project {
+    padding: 1em;
+    text-align: center;
+    margin: 1em;
+    border-radius: 0.4em;
+}
+
+.ongoing-projects .project:nth-child(odd) {
+    background-color: rgba(0, 40, 0);
+}
+
+.ongoing-projects .project:nth-child(even) {
+    background-color: rgba(0, 40, 0);
+}
+
+.ongoing-projects .project:hover {
+    background-color: rgba(0, 20, 0);
+}
+
+.ongoing-projects a {
+    text-decoration: none;
+    color: white;
+}
+
+.ongoing-projects a:hover {
+    text-decoration: none;
+}
+
+.project {
+    margin-top: 1rem;
+    color: white;
+}
+
+.project h3 {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.project p {
+    font-size: 1rem;
+    margin: 0.2rem 0;
+}
+
+.service-hours {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20%; 
+    background-color: rgba(0, 68, 0, 0.6); 
+    padding: 1em;
+    text-align: center;
+    margin: 5rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    right: 15%;
+}
+
+.service-hours h2 {
+    font-size: 2vw; 
+    margin-bottom: 0.5em;
+}
+
+.service-hours p {
+    font-size: 1.5vw; 
+    margin: 0.2em 0;
+}
+
+.future-projects {
+    position: absolute;
+    top: 1;
+    right: 0;
+    width: 20%;
+    height: 50%; 
+    overflow-y: auto; 
+    background-color: rgba(0, 68, 0, 0.6);
+    padding: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    margin: 5rem;
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center; 
+    right: 15%;
+}
+
+.future-projects h2 {
+    font-size: 2vw;
+}
+
+.future-projects .project {
+    padding: 1em;
+    text-align: center;
+    margin: 1em;
+    border-radius: 0.4em;
+}
+
+.future-projects .project:nth-child(odd) {
+    background-color: rgba(0, 40, 0);
+}
+
+.future-projects .project:nth-child(even) {
+    background-color: rgba(0, 40, 0);
+}
+
+.future-projects .project:hover {
+    background-color: rgba(0, 20, 0);
+}
+
+.future-projects a {
+    text-decoration: none;
+    color: white;
+}
+
+.future-projects a:hover {
+    text-decoration: none;
+}
+
+.personal-info {
+    position: absolute;
+    top: 1;
+    left: 0;
+    width: 20%;
+    background-color: rgba(0, 68, 0, 0.6);
+    padding: 1em;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    margin: 5rem;
+    left: 15%;
+}
+
+.personal-info h2 {
+    font-size: 2vw;
+    margin-bottom: 0.5em;
+}
+
+.personal-info p {
+    font-size: 1.5vw;
+    margin: 0.2em 0;
+}
