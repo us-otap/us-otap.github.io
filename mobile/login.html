@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" href="index.css"/>
     <script src="main.js"></script>
     <title>Login</title>
 </head>
 <body>    
     <div class="background-container">
-        <div class = "dimmed-overlay">
-            <div class = header>
-                <div class = "title">
+        <div class="dimmed-overlay">
+            <div class="header">
+                <div class="title">
                     <h1>OTAP</h1>
+                    <button type = "submit" onclick = "window.location.href = 'login.html'"><img src = "/login icon 2 - Copy.png" class = "option" id = "login-link"></button>
                 </div>
 
                 <div class="menu">
-                    <a id = current class = option href = index.html>Home</a>
-                    <a class = option href = projects.html>Projects</a>
-                    <a class = option href = about.html>About Us</a>
-                    <button type = "submit" onclick = "window.location.href = 'login2.html'"><img src = "login icon 2 - Copy.png" class = "option" id = "login-link"></button>
+                    <a class="option" href="index.html"><strong>Home</strong></a>
+                    <a class = "option" href = "projects.html"><strong>Projects</strong></a>
+                    <a class = "option" href = "about.html"><strong>About Us</strong></a>
                 </div>
             </div>
 
@@ -36,9 +36,9 @@
                         <input type="password" name="password" id="login_password" class="form-control">
                     </div>
 
-                    <button type="button" id="login" name="login" class="form-btn">Login</button>
+                    <button type="button" name="login" class="form-btn" id = "login">Login</button>
                 </div>
-                
+
                 <label>Don't have an account?</label>
                 <button id = "register-btn" onClick = "window.location.href = 'register.html'">
                     Click here to register
@@ -49,9 +49,10 @@
 
     <style>
         .center-text {
-            margin-top: 5%;
+            margin-top: 8%;
             justify-content: center;
             display: flexbox;
+            padding: 5% 12% 12%;
         }
     
         .outer-form-group {
@@ -59,18 +60,17 @@
             border: 3px solid white;
             border-radius: 15px;
             background-color: transparent;
-            margin-right: 35%;
-            margin-left: 35%;
+            margin-bottom: 10%;
         }
     
         .form-group {
             display: flex;
             flex-direction: column;
-            margin: 4% 0;
+            margin: 2% 0;
         }
     
         .form-control {
-            font-size: 1vw;
+            font-size: 0.5em;
             background-color: #f0f0f0;
             border: none;
             padding: 10px;
@@ -80,12 +80,13 @@
         .form-btn {
             background-color: #4CAF50;
             color: white;
-            padding: 15px 30px;
-            font-size: 1.5vw;
-            margin-top: 2vh;
+            font-size: 0.5em;
+            margin-top: 5%;
+            margin-bottom: 5%;
             border: none;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 1em;
+            padding: 10% 15%;
         }
     
         .form-btn:hover {
@@ -93,7 +94,7 @@
         }
     
         label {
-            font-size: 1.5vw;
+            font-size: 0.5em;
             text-align: left;
         }
     
@@ -107,8 +108,8 @@
         }
 
         #register-btn {
-            font-size: 0.4em;
-            padding: 1%;
+            font-size: 0.5em;
+            padding: 8%;
             background-color: #45a049;
             border-radius: 1em;
             color: white;

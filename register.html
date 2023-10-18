@@ -25,24 +25,29 @@
 
             <div class="center-text">
                 <div class="outer-form-group">
-                    <div class="main-label"><strong>Login</strong></div>
+                    <div class="main-label"><strong>Register</strong></div>
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" name="first-name" id="first-name" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" name="last-name" id="last-name" class="form-control">
+                    </div>
+
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="text" name="email" id="login_email" class="form-control">
+                        <input type="text" name="email" id="email" class="form-control">
                     </div>
-
+                    
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" name="password" id="login_password" class="form-control">
+                        <input type="password" name="password" id="password" class="form-control">
                     </div>
 
-                    <button type="button" id="login" name="login" class="form-btn">Login</button>
+                    <button type="button" id="register" name="register" class="form-btn">Register</button>
                 </div>
-                
-                <label>Don't have an account?</label>
-                <button id = "register-btn" onClick = "window.location.href = 'register.html'">
-                    Click here to register
-                </button>
             </div>
         </div>
     </div>
@@ -51,7 +56,7 @@
         .center-text {
             margin-top: 5%;
             justify-content: center;
-            display: flexbox;
+            display: flex;
         }
     
         .outer-form-group {
@@ -59,8 +64,6 @@
             border: 3px solid white;
             border-radius: 15px;
             background-color: transparent;
-            margin-right: 35%;
-            margin-left: 35%;
         }
     
         .form-group {
@@ -105,18 +108,10 @@
             margin-bottom: 6px;
             color: #f0f0f0;
         }
-
-        #register-btn {
-            font-size: 0.4em;
-            padding: 1%;
-            background-color: #45a049;
-            border-radius: 1em;
-            color: white;
-        }
     </style>
     
     <script  type="module" src = "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"></script>
     <script  type="module" src = "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js"></script>
-    <script type="module" src = "login.js"></script>
+    <script type="module" src = "register.html"></script>
 </body>
 </html>

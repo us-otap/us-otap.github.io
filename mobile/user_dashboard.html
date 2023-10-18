@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="profile.css">
+    <title>User Dashboard</title>
+</head>
+<body>
+    <div class="background-container">
+        <div class="dimmed-overlay">
+            <div class="header">
+                <div class="title">
+                    <h1>OTAP</h1>
+                </div>
+
+                <div class="menu">
+                    <a id = current class = option href = index.html>Home</a>
+                    <a class = option href = projects.html>Projects</a>
+                    <a class = option href = about.html>About Us</a>
+                    <img src = "login icon 2 - Copy.png" class = "option" id = "login-link" href = "login2.html">
+                </div>
+            </div>
+            
+            <div class="dashboard-container">
+                <div class="personal-info">
+                    <div id="user-info"></div>
+                </div>
+                <div class="future-projects">
+                    <h2>Upcoming Projects</h2>
+                    <div class="projects-list">
+                        <div class="project">
+                            <a href="ex.html">
+                                <h3>Project 1</h3>
+                                <p>Date: October 10, 2023</p>
+                                <p>Location: Community Center</p>
+                                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </a>
+                        </div>
+                        <div class="project">
+                            <a href="ex.html">
+                            <h3>Project 2</h3>
+                                <p>Date: November 15, 2023</p>
+                                <p>Location: Park</p>
+                                <p>Description: Another project description goes here.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-hours">
+                    <div id="volunteer-hours"></div>
+                </div>
+                <div class="ongoing-projects">
+                    <h2>Ongoing Projects</h2>
+                    <div class="project">
+                        <h3>Project A</h3>
+                        <p>Started: September 1, 2023</p>
+                        <p>Location: Community Center</p>
+                        <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type = "module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+        import { updateDashboard } from "./database.js";
+        import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js';
+
+        
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCqdRFXYfChIyW0Mhu-iE9hxhp_Fe2VgdU",
+            authDomain: "otap-website-auth.firebaseapp.com",
+            projectId: "otap-website-auth",
+            storageBucket: "otap-website-auth.appspot.com",
+            messagingSenderId: "889589100403",
+            appId: "1:889589100403:web:1f171ee5454fb2cf831f06",
+            measurementId: "G-7CRCM9B89S"
+		};
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const db = getDatabase(app);
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                updateDashboard(db, user.uid);
+
+                const signOutButton = document.getElementById('logout');
+                signOutButton.addEventListener("click", function() {
+                    signOut(auth).then(() => {
+                        console.log('Log out successful.');
+                        window.location.href = 'index.html';
+89                        //document.getElementById('logout').style.display = 'none';
+                        }).catch((error) => {
+                        console.log('An error happened.');
+                    });		  		  
+                });
+            } else {
+                
+            }
+        });
+    </script>
+</body>
+</html>

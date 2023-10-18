@@ -67,6 +67,16 @@ h1 {
     border-bottom: 1px solid white;
 }
 
+.title button {
+    border: none;
+    background-color: inherit;
+    margin-left: auto;
+}
+
+#login-link {
+    height: 5em;
+}
+
 .option {
     align-items: center;
     color: white;
@@ -86,16 +96,9 @@ h1 {
 }
 
 .header {
-    display: fle;
 }
 
 #current {
     opacity: 0.3;
 }
 
-#login-link {
-    border: none;
-    width: auto;
-    height: 1.8em;
-    margin-left: auto;
-}
