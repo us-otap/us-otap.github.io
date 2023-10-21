@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css"/>
     <script src = "403.js"></script>
-    <title>OTAP</title>
+    <script src = "main.js"></script>
+    <title>Home - OTAP</title>
 
     <script>
         //check for mobile devices
@@ -18,6 +19,9 @@
         if (window.mobileCheck()) {
             window.location.href = "mobile/index.html";
         }
+
+        //var title = document.title.split(' - ')[0].toLowerCase();
+        //window.history.pushState({}, '', title);
     </script>
 </head>
 <body>    
@@ -31,7 +35,7 @@
                 <div class="menu">
                     <a id = current class = option href = index.html>Home</a>
                     <a class = option href = projects.html>Projects</a>
-                    <a class = option href = about.html>About Us</a>
+                    <a class = option href = "about.html">About Us</a>
                     <button type = "submit" onclick = "window.location.href = 'login2.html'"><img src = "login icon 2 - Copy.png" class = "option" id = "login-link"></button>
                 </div>
             </div>
