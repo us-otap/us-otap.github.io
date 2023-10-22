@@ -39,7 +39,7 @@
     animation: box 3s infinite;
   }
   
-  button::before {
+  .projects-list button::before {
     content: "";
     position: absolute;
     inset: 2px;
