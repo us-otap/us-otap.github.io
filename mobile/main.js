@@ -4,9 +4,6 @@ window.mobileCheck = function() {
     return check;
 };
 
-if (window.mobileCheck()) {
-    window.location.href = "mobile/index.html";
+if (!window.mobileCheck()) {
+    window.location.href = "/index.html";
 }
-
-var title = document.title.split(' ')[0].toLowerCase();
-window.history.pushState({}, '', title);
