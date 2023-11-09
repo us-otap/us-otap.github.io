@@ -1,0 +1,62 @@
+.dashboard-container {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.ongoing-projects {
+    width: 80%;
+    margin: auto;
+    background-color: rgba(0, 68, 0, 0.6);
+    padding: 1em;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.ongoing-projects .project {
+    padding: 1em;
+    text-align: center;
+    margin: 1em;
+    border-radius: 0.4em;
+}
+
+.project {
+    margin-top: 1rem;
+    color: rgba(0, 40, 0,);
+    background-color: rgb(0, 68, 0);
+}
+
+.project h3 {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.project p {
+    font-size: 1rem;
+    margin: 0.2rem 0;
+}
+
+.user-info-container {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    display: flex;
+}
+
+.service-hours {
+    width: 20%; 
+    margin: auto;
+    background-color: rgba(0, 68, 0, 0.6); 
+    padding: 1em;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+}
+
+.user-info {
+    width: 20%;
+    margin: auto; 
+    background-color: rgba(0, 68, 0, 0.6);
+    padding: 1em;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}

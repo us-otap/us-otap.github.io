@@ -14,7 +14,8 @@ export function updateDashboard(db, userID) {
     onValue(data, (snapshot) => {
         const userData = snapshot.val();
         console.log(userData);
-        const volunteerHours = userData["volunteerHours"] || 0;
+        console.log(userID);
+        const volunteerHours = userData["volunteerHours"];
         document.getElementById('user-info').innerHTML = `
             <p>Email: ${userData["email"]}!</p>
             <p>Hello ${userData["firstName"]} ${userData["lastName"]}</p>`;

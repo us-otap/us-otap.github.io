@@ -58,6 +58,7 @@ document.getElementById("register").addEventListener("click", function() {
       document.getElementById("email").value = '';
       document.getElementById("password").value = '';
       alert(user.email + " registered successfully");
+      window.location.href = "login.html";
   })
   .catch((error) => {
       const errorCode = error.code;

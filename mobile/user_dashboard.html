@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="profile.css">
     <title>User Dashboard</title>
 </head>
@@ -13,46 +13,25 @@
             <div class="header">
                 <div class="title">
                     <h1>OTAP</h1>
+                    <button type = "submit" onclick = "window.location.href = 'login.html'"><img src = "/login icon 2 - Copy.png" class = "option" id = "login-link"></button>
                 </div>
 
                 <div class="menu">
                     <a id = current class = option href = index.html>Home</a>
                     <a class = option href = projects.html>Projects</a>
                     <a class = option href = about.html>About Us</a>
-                    <img src = "login icon 2 - Copy.png" class = "option" id = "login-link" href = "login2.html">
                 </div>
             </div>
             
             <div class="dashboard-container">
-                <div class="personal-info">
-                    <div id="user-info"></div>
+                <div class = "user-info-container">
+                    <div class="user-info"></div>
+                    <div class="service-hours"></div>
                 </div>
-                <div class="future-projects">
-                    <h2>Upcoming Projects</h2>
-                    <div class="projects-list">
-                        <div class="project">
-                            <a href="ex.html">
-                                <h3>Project 1</h3>
-                                <p>Date: October 10, 2023</p>
-                                <p>Location: Community Center</p>
-                                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </a>
-                        </div>
-                        <div class="project">
-                            <a href="ex.html">
-                            <h3>Project 2</h3>
-                                <p>Date: November 15, 2023</p>
-                                <p>Location: Park</p>
-                                <p>Description: Another project description goes here.</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="service-hours">
-                    <div id="volunteer-hours"></div>
-                </div>
+
                 <div class="ongoing-projects">
-                    <h2>Ongoing Projects</h2>
+                    <h2>Your Projects</h2>
+                    <h4>These are projects that you have signed up for</h4>
                     <div class="project">
                         <h3>Project A</h3>
                         <p>Started: September 1, 2023</p>
