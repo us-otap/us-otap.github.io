@@ -13,6 +13,10 @@
     min-height: 100vh;
     background: #27272c;
   }
+
+  .dimmed-overlay {
+    text-align: center;
+  }
   
   button {
     position: relative;
@@ -28,6 +32,7 @@
     display: inline-block; 
     text-align: center; 
     line-height: 1.5; 
+    margin: 0.5rem;
   }
   
   button:hover {
@@ -293,4 +298,16 @@
 .personal-info p {
     font-size: 1.5vw;
     margin: 0.2em 0;
+}
+
+.projects-header {
+  text-align: center; 
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff; 
+  font-size: 2rem; 
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  margin: 10px; 
 }
