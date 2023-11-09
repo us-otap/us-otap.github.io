@@ -1,12 +1,13 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
 import { writeUserData } from "./database.js";
-import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js';
+import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCqdRFXYfChIyW0Mhu-iE9hxhp_Fe2VgdU",
   authDomain: "otap-website-auth.firebaseapp.com",
+  databaseURL: "https://otap-website-auth-default-rtdb.firebaseio.com",
   projectId: "otap-website-auth",
   storageBucket: "otap-website-auth.appspot.com",
   messagingSenderId: "889589100403",
@@ -32,6 +33,7 @@ document.getElementById("register").addEventListener("click", function() {
   .then((userCredential) => {
       const user = userCredential.user;
       console.log(user);
+      console.log("DATABASE: " + db);
 
       const userData = {
           firstName: firstName,
@@ -39,11 +41,18 @@ document.getElementById("register").addEventListener("click", function() {
           email: email,
           [volunteerHoursId]: volunteerHours,
           password: password,
+          projects: [],
       };
 
-      set(ref(db, 'users/' + user.uid), userData);
+      try {
+        set(ref(db, 'users/' + user.uid), userData);
+      } catch (error) {
+        console.log("Error:");
+      } finally {
+        console.log("User data successfully uploaded to database.");
+      }
 
-      // Ensure the DOM is ready before manipulating the "volunteerHours" element
+      /*// Ensure the DOM is ready before manipulating the "volunteerHours" element
       document.addEventListener("DOMContentLoaded", function() {
           const volunteerHoursElement = document.getElementById(volunteerHoursId);
           if (volunteerHoursElement) {
@@ -51,13 +60,14 @@ document.getElementById("register").addEventListener("click", function() {
           } else {
               console.error(`Element with id '${volunteerHoursId}' not found in the DOM.`);
           }
-      });
+      });*/
 
       document.getElementById("first-name").value = '';
       document.getElementById("last-name").value = '';
       document.getElementById("email").value = '';
       document.getElementById("password").value = '';
       alert(user.email + " registered successfully");
+      //window.location.href = "login.html"; //DO NOT ENABLE THIS - this line somehow fucks up user data upload
   })
   .catch((error) => {
       const errorCode = error.code;
@@ -77,3 +87,16 @@ document.getElementById("register").addEventListener("click", function() {
         console.log('An error happened.');
       });		  		  
 });*/
+
+/*
+{
+  "rules": {
+    "users": {
+      "$userId": {
+        ".write": "$userId === auth.uid",
+        ".read": "$userId === auth.uid"
+      }
+    }
+  }
+}
+*/
