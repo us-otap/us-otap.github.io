@@ -66,6 +66,8 @@
 .project {
     margin-top: 1rem;
     color: white;
+    display: flex;
+    text-align: center;
 }
 
 .project h3 {
@@ -188,10 +190,11 @@ button {
     font-size: 1rem;
     padding: 1rem 3rem;
     transition: 0.2s;
-    display: inline-block; 
+    display: flex; 
     text-align: center; 
     line-height: 1.5; 
     margin: 0.5rem;
+    text-align: center;
   }
   
   button:hover {
