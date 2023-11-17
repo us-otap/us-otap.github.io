@@ -190,11 +190,10 @@ button {
     font-size: 1rem;
     padding: 1rem 3rem;
     transition: 0.2s;
-    display: flex; 
+    display: inline-block; 
     text-align: center; 
     line-height: 1.5; 
     margin: 0.5rem;
-    text-align: center;
   }
   
   button:hover {
@@ -205,6 +204,13 @@ button {
     /* box-shadow: 0 0 35px var(--clr); */
     animation: box 3s infinite;
   }
+  
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
   
   .projects-list button::before {
     content: "";
