@@ -27,17 +27,114 @@
             </div>
 
             <div class = "body-container">
-                <h2>Contact Us - us.otap@gmail.com</h2>
+                <form action="/submit" method="post">
+                    <h2>Customer Support Form</h2>
+
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" name="first-name" id="first-name" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" name="last-name" id="last-name" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <select id = "form-type" name = "form-type" onchange = "toggleTextarea()" required>
+                            <option value = "" disabled selected>Select your issue</option>
+                            <option value = "website-bug">Website Bug</option>
+                            <option value = "account-issue">Account Issue</option>
+                            <option value = "other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id = "issue-description-container">
+                        <label for = "issue-description">Describe your issue:</label>
+                        <textarea id = "issue-description" name = "issue-description" rows = "4" cols = "30" required></textarea>
+                    </div>
+
+                    <input type="submit" value="Submit" id = "submit-button">
+                </form>
             </div>
         </div>
     </div>
 
     <style>
-        .body-container h2{
-            color: white;
+        form {
+            margin: auto;
+            margin-top: 2%;
             text-align: center;
+            justify-content: center;
+            font-size: 1.5em;
+            color: white;
+            border: 3px solid white;
+            border-radius: 15px;
+            width: fit-content;
+            padding: 3%;
+            padding-bottom: 1%;
+        }
+
+        .form-group {
+            color: white;
+            margin-top: 2%;
+            margin: 4%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        #form-type, input {
+            font-size: 0.8em;
+            text-align: center;
+            border: solid lightgreen 3px;
+            border-radius: 5%;
+        }
+
+        #form-type {
+            padding: 10px;
+            margin-top: 2%;
+        }
+
+        #submit-button {
+            margin-top: 5%;
+            margin-bottom: 5%;
+            font-size: 1em;
+            padding: 10px 30px;
+            border-radius: 15%;
+        }
+
+        #submit-button:hover {
+           background-color: rgb(2, 162, 2); 
+        }
+
+        #issue-description-container {
+            display: none;
             margin-top: 5%;
         }
+
+        #issue-description-container textarea {
+            border: solid lightgreen 3px;
+            border-radius: 5%;
+        }
     </style>
+
+    <script>
+        function toggleTextarea() {
+            var dropdown = document.getElementById("form-type");
+            var textarea = document.getElementById("issue-description");
+
+            if (dropdown.value === "website-bug" || dropdown.value === "account-issue" || dropdown.value === "other") {
+                document.getElementById("issue-description-container").style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
