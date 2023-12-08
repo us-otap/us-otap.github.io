@@ -17,18 +17,25 @@
                 </div>
 
                 <div class="menu">
-                    <a id = current class = option href = index.html>Home</a>
+                    <a class = option href = index.html>Home</a>
                     <a class = option href = projects.html>Projects</a>
                     <a class = option href = about.html>About Us</a>
-                    <img src = "login icon 2 - Copy.png" class = "option" id = "login-link" href = "login.html">
+                    <a class = option href = contact.html>Contact Us</a>
+                    <button type = "submit" onclick = "window.location.href = 'login.html'"><img src = "login icon 2 - Copy.png" class = "option" id = "login-link"></button>
                 </div>
             </div>
             
             <div class="dashboard-container">
                 <div class="personal-info">
-                    <div id="user-info"></div>
+                    <div>
+                        <div id="user-name"></div>
+                        <div id = "user-email"></div>
+                    </div>
+
+                    <button id = "logout-btn">Logout</button>
                 </div>
-                <div class="future-projects">
+
+                <!--<div class="future-projects">
                     <h2>Upcoming Projects</h2>
                     <div class="projects-list">
                         <div class="project">
@@ -48,17 +55,32 @@
                             </a>
                         </div>
                     </div>
-                </div>
-                <div class="service-hours">
-                    <div id="volunteer-hours"></div>
-                </div>
-                <div class="ongoing-projects">
-                    <h2>Ongoing Projects</h2>
-                    <div class="project">
-                        <h3>Project A</h3>
-                        <p>Started: September 1, 2023</p>
-                        <p>Location: Community Center</p>
-                        <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>-->
+                <div class = "dashboard-body-container">
+                    <div class = "dashboard-body-left-container">
+                        <div class="service-hours">
+                            <div id="volunteer-hours"></div>
+                        </div>
+
+                        <div class="completed-projects">
+                            <h2>Completed Projects</h2>
+                            <div class="project">
+                                <h3>Project A</h3>
+                                <p>September 1, 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ongoing-projects">
+                        <h2>Project Signup Portal</h2>
+                        <p id = "signup-info">By checking the box for a project, you are signing up for it, and will be expected to be present. Project descriptions detail what you will be doing. If staff decide that your work that day was acceptable, the specified number of volunteer hours will be added to your account.</p>
+                        <p id = "signup-time-info">Project signups end 3 days prior to the posted date. However cancellations may be done up to 24 hours prior.</p>
+                        <div class="project">
+                            <h3>Project A</h3>
+                            <p>Started: September 1, 2023</p>
+                            <p>Location: Community Center</p>
+                            <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
                     </div>
                 </div>
             </div>

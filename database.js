@@ -16,10 +16,12 @@ export function updateDashboard(db, userID) {
         console.log(userData);
         console.log(userID);
         const volunteerHours = userData["volunteerHours"];
-        document.getElementById('user-info').innerHTML = `
-            <p>Email: ${userData["email"]}!</p>
-            <p>Hello ${userData["firstName"]} ${userData["lastName"]}</p>`;
+        document.getElementById('user-name').innerHTML = `
+            <p>Your Dashboard - ${userData["firstName"]} ${userData["lastName"]}</p>`;
+        document.getElementById('user-email').innerHTML = `
+            <p>${userData["email"]}</p>`;
         document.getElementById('volunteer-hours').innerHTML = `
             <p>Volunteer Hours: ${volunteerHours} hours</p>`;
     });
 }
+//
