@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="main.css">
     <script src = "403.js"></script>
     <script src = "main.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="background-container">
@@ -27,7 +26,7 @@
             </div>
 
             <div class = "body-container">
-                <form action="/submit" method="post">
+                <form id = "formID">
                     <h2>Support Inquiry Form</h2>
 
                     <div class="form-group">
@@ -61,7 +60,7 @@
                         <textarea id = "issue-description" name = "issue-description" rows = "4" cols = "30" required></textarea>
                     </div>
 
-                    <input type = "submit" value = "Submit" id = "submit-button">
+                    <button id = "submit-button">Submit</button>
                 </form>
             </div>
         </div>
@@ -104,6 +103,10 @@
         #form-type {
             padding: 10px;
             margin-top: 2%;
+        }
+
+        #form-type option {
+            color: black;
         }
 
         #submit-button {
@@ -176,6 +179,37 @@
                 document.getElementById("issue-description-container").style.display = "block";
             }
         }
+    </script>
+
+    <script type = "module">
+        import { writeContactFormData } from "./database.js";
+        import { db } from "./constants.js";
+
+        function clearForm() {
+            alert("Your form has been submitted. You will receive a response within 72 hours.");
+            //document.getElementById("formID").reset();
+        }
+
+        function test() {
+            console.log(document.getElementById("first-name").value);
+            alert("yes");
+        }
+
+        function uploadData() {
+            var firstName = document.getElementById("first-name").value;
+            var lastName = document.getElementById("last-name").value;
+            var email = document.getElementById("email").value;
+            var formType = document.getElementById("form-type").value;
+            var description = document.getElementById("issue-description").value; 
+            console.log("inside function: " + firstName + " " + lastName + " " + email + " " + formType + " " + description);
+            writeContactFormData(db, firstName, lastName, email, formType, description);
+            event.preventDefault(); // <--
+            document.getElementById("formID").reset(); // do not get rid of either of these lines the data upload DOES NOT WORK without them idk y
+            alert("Your form has been submitted. You will receive a response within 72 hours.");
+        }
+        //document.getElementById("submit-button").addEventListener("click", writeContactFormData(db, document.getElementById("first-name").value, document.getElementById("last-name").value, document.getElementById("email").value, document.getElementById("form-type").value, document.getElementById("issue-description").value));
+        //document.getElementById("submit-button").addEventListener("click", test);
+        document.getElementById("submit-button").addEventListener("click", uploadData);
     </script>
 </body>
 </html>

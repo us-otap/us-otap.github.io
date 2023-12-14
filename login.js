@@ -3,21 +3,11 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 import { writeUserData } from "./database.js";
 import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js';
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCqdRFXYfChIyW0Mhu-iE9hxhp_Fe2VgdU",
-  authDomain: "otap-website-auth.firebaseapp.com",
-  projectId: "otap-website-auth",
-  storageBucket: "otap-website-auth.appspot.com",
-  messagingSenderId: "889589100403",
-  appId: "1:889589100403:web:1f171ee5454fb2cf831f06",
-  measurementId: "G-7CRCM9B89S"
-};
+import  { firebaseConfig, db } from "./constants.js";
 
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth();
-const db = getDatabase(app);
 
 document.getElementById("login").addEventListener("click", function() {
   const email =  document.getElementById("login_email").value;
