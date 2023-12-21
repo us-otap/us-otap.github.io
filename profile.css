@@ -3,7 +3,7 @@
     justify-content: space-between;
     color: white;
     font-size: 1.5rem;
-    border: 6px lightgreen double;
+    border: 6px white double;
     border-radius: 20px;
     margin: 3%;
     margin-top: 2%;
@@ -30,7 +30,7 @@
     background-color: rgba(0, 68, 0, 0.6);
     padding: 1em;
     border-radius: 0.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: 5px solid rgba(0, 0, 0, 0.3);
     border-radius: 0.5rem;
     margin-top: 2%;
     margin-left: auto;
@@ -49,8 +49,8 @@
 
 #signup-info {
     font-size: 1.8vh;
-    border-top: solid red 2px;
-    border-bottom: solid red 2px;
+    border-top: solid white 2px;
+    border-bottom: solid white 2px;
     padding: 1%;
 }
 
@@ -93,7 +93,7 @@
     background-color: rgba(0, 68, 0, 0.6); 
     padding: 1em;
     text-align: center;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: 5px solid rgba(0, 0, 0, 0.3);
     border-radius: 0.5rem;
     height: fit-content;
 }
@@ -185,7 +185,23 @@
     height: fit-content;
     margin-left: auto;
     margin-right: 5%;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #388e3c, #2e7d32);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+#logout-btn:hover {
+    background: linear-gradient(to right, #2e7d32, #388e3c);
+    transform: scale(1.05);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+
 
 
 .completed-projects {
@@ -194,7 +210,7 @@
     background-color: rgba(0, 68, 0, 0.6);
     padding: 1em;
     border-radius: 0.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: 5px solid rgba(0, 0, 0, 0.3);
     border-radius: 0.5rem;
     margin-top: 5%;
     text-align: center;
