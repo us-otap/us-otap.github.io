@@ -47,9 +47,9 @@
                     <div class="form-group">
                         <select id = "form-type" name = "form-type" onchange = "toggleTextarea()" required>
                             <option value = "" disabled selected>Select your issue</option>
-                            <option value = "website-bug">Website Bug</option>
-                            <option value = "account-issue">Account Issue</option>
-                            <option value = "unsubscribe">Unsubscribe from newsletter</option>
+                            <option value = "website-bug" required>Website Bug</option>
+                            <option value = "account-issue" required>Account Issue</option>
+                            <option value = "unsubscribe" required>Unsubscribe from newsletter</option>
                             <option value = "delete-account">Delete Account</option>
                             <option value = "other">Other</option>
                         </select>
@@ -60,7 +60,7 @@
                         <textarea id = "issue-description" name = "issue-description" rows = "4" cols = "30" required></textarea>
                     </div>
 
-                    <button id = "submit-button">Submit</button>
+                    <input type = "submit" id = "submit-button">
                 </form>
             </div>
         </div>
@@ -201,7 +201,12 @@
             var email = document.getElementById("email").value;
             var formType = document.getElementById("form-type").value;
             var description = document.getElementById("issue-description").value; 
-            console.log("inside function: " + firstName + " " + lastName + " " + email + " " + formType + " " + description);
+            
+            if (firstName.length === 0 || lastName.length === 0 || email.length === 0 || formType.length === 0 || description.length === 0) {
+                alert("All fields are required.");
+                return;
+            }
+
             writeContactFormData(db, firstName, lastName, email, formType, description);
             event.preventDefault(); // <--
             document.getElementById("formID").reset(); // do not get rid of either of these lines the data upload DOES NOT WORK without them idk y
