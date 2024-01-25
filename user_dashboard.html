@@ -12,8 +12,16 @@
     <div class="background-container">
         <div class="dimmed-overlay">
             <div class="header">
-                <div class="title">
+                <div class = "title">
+                    <img src = "/OTAP_Logo_Transparent_BG.png">
                     <h1>OTAP</h1>
+
+                    <a href = "https://discord.gg/Dx9d7nrKT5" id = "discord-logo">
+                        <img src = "/discord_logo.webp">
+                    </a>
+                    <a href = "https://www.instagram.com/otap.region1/" id = "instagram-logo">
+                       <img src = "/Instagram_icon.png"> 
+                    </a>
                 </div>
 
                 <div class="menu">
@@ -111,18 +119,15 @@
             if (user) {
                 updateDashboard(db, user.uid);
 
-                /*const signOutButton = document.getElementById('logout');
+                const signOutButton = document.getElementById('logout-btn');
                 signOutButton.addEventListener("click", function() {
                     signOut(auth).then(() => {
                         console.log('Log out successful.');
                         window.location.href = 'index.html';
-                        //document.getElementById('logout').style.display = 'none';
                         }).catch((error) => {
                         console.log('An error happened.');
                     });		  		  
-                /});
-            } else {
-                */
+                });
             }
         });
     </script>

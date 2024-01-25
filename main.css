@@ -1,4 +1,4 @@
-html, body {
+body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -14,12 +14,35 @@ h1 {
 }
 
 .title {
+    display: flex;
     color: white;
     font-family: 'Courier New', Courier, monospace;
     font-size: 2rem;
     padding-top: 2%;
     margin-left: 8%;
-}   
+    align-items: center;
+}
+
+.title img {
+    height: 150px;
+    margin-right: 5%;
+}
+
+#discord-logo{
+    margin-left: 10%;
+}
+
+#discord-logo img{
+    height: 75px;
+}
+
+#instagram-logo{
+    margin-left: 1%;
+}
+
+#instagram-logo img{
+    height: 45px;
+}
 
 .background-container {
     margin-top: 0%;
@@ -27,8 +50,9 @@ h1 {
     height: 100%; 
     background: url("background_img1.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .dimmed-overlay {
@@ -55,7 +79,7 @@ h1 {
     display: flex;
     width: 100vw;
     justify-content: end;
-    margin-top: 2%;
+    margin-top: 3.5%;
     margin-right: 5%;
     align-items: center;
 }

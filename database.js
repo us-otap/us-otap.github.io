@@ -48,4 +48,17 @@ export function updateDashboard(db, userID) {
             <p>Volunteer Hours: ${volunteerHours} hours</p>`;
     });
 }
+
+/*
+export function updateProjectSignup(db, userID) {
+    const entryName = `${firstName}_${lastName}`;
+    let entryRef = ref(db, 'projectSignups/' + entryName);
+
+    set(entryRef, {
+        firstName: firstName,
+        lastName: lastName,
+        email: email
+    });
+
+}*/
 //https://firebase.google.com/docs/web/learn-more#libraries-cdn
