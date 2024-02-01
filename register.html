@@ -63,6 +63,24 @@
     </div>
 
     <style>
+        .background-container {
+            position: relative;
+            width: 100%;
+            height: 100vh; 
+            overflow: hidden;
+        }
+
+        .background-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("background_img1.jpg") center center / cover no-repeat; /* Use the shorthand background property */
+            z-index: -1; 
+        }
+
         .center-text {
             margin-top: 5%;
             justify-content: center;
