@@ -19,10 +19,10 @@ h1 {
 .title {
     display: flex;
     color: white;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 2rem;
     padding-top: 2%;
-    margin-left: 8%;
+    margin-left: 4%;
     align-items: center;
     width: 30vw;
 }
@@ -30,6 +30,7 @@ h1 {
 .title img {
     height: 150px;
     margin-right: 5%;
+    margin-left: 0%;
 }
 
 #discord-logo{
@@ -38,10 +39,6 @@ h1 {
 
 #discord-logo img{
     height: 75px;
-}
-
-#instagram-logo{
-    margin-left: 1%;
 }
 
 #instagram-logo img{
@@ -67,7 +64,7 @@ h1 {
 .center-text {
     font-size: 4rem;
     color: white;
-    margin-top: 8vw;
+    margin-top: 6vw;
     text-align: center;
 }
 
@@ -97,18 +94,55 @@ h1 {
     align-items: center;
     color: white;
     font-size: 2rem;
-    margin-left: 1em;
-    margin-right: 5%;
     border-radius: 0.4em;
     width: 5em;
     height: 2em;
-    justify-content: center;
-    text-decoration: none; 
+    text-decoration: none;
+    text-align: center;
+    margin: 0 4% 0 4%;
+    padding: 0 2% 0 2%;
+    width: max-content;
 }
 
 .option:hover {
-    background-color: rgba(255, 255, 255, 0.2); 
     cursor: pointer;
+    color: rgb(134, 205, 229);
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0 4% 0 4%;
+}
+
+.associated-orgs-text {
+    font-size: 1vw;
+    margin-top: 2%;
+}
+
+.associated-orgs-text a {
+    color: lightblue;
+}
+
+@media (max-width: 1900px) { /*css changes for chromebooks*/
+    .option {
+        font-size: 1.5rem;
+    }
+
+    .menu {
+        margin-top: 5%;
+    }
+
+    .center-text {
+        font-size: 3rem;
+        margin-top: 4vh;
+    }
+    
+    .center-text-desc {
+        font-size: 2.5vw;
+        margin-top: 3%;
+    }
+
+    .associated-orgs-text {
+        font-size: 1.5vw;
+        margin-top: 2%;
+    }
 }
 
 .header {
