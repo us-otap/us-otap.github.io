@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us - OTAP</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src = "403.js"></script>
+    <script src = "main.js"></script>
+</head>
+<body>
+    <div class="background-container">
+        <div class = "dimmed-overlay">
+            <div class = header>
+                <div class = "title">
+                    <div id = "logo-text">
+                        O
+                        T
+                        A
+                        P
+                    </div>
+
+                    <img src = "/OTAP_Logo_Transparent_BG.png">
+
+                    <div id = #logo-link-container>
+                        <a href = "https://discord.gg/Dx9d7nrKT5" id = "discord-logo"> <!--https://discord.gg/Dx9d7nrKT5-->
+                            <img src = "/discord_logo.webp">
+                        </a>
+                        <a href = "https://www.instagram.com/otap.region1/" id = "instagram-logo">
+                        <img src = "/Instagram_icon.png"> 
+                        </a>
+                    </div>
+                </div>
+
+                <div class="menu">
+                    <a class = option href = index.html>Home</a>
+                    <a class = option href = projects.html>Projects</a>
+                    <a id = current class = option href = contact.html>Contact Us</a>
+                    <button type = "submit" onclick = "window.location.href = 'login.html'"><img src = "login icon 2 - Copy.png" class = "option" id = "login-link"></button>
+                </div>
+            </div>
+
+            <div class = "body-container">
+                <form id = "formID">
+                    <h2>Support Inquiry Form</h2>
+
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" name="first-name" id="first-name" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" name="last-name" id="last-name" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <select id = "form-type" name = "form-type" onchange = "toggleTextarea()" required>
+                            <option value = "" disabled selected>Select your issue</option>
+                            <option value = "website-bug" required>Website Bug</option>
+                            <option value = "account-issue" required>Account Issue</option>
+                            <option value = "unsubscribe" required>Unsubscribe from newsletter</option>
+                            <option value = "delete-account">Delete Account</option>
+                            <option value = "other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id = "issue-description-container">
+                        <label for = "issue-description">Describe your issue</label>
+                        <textarea id = "issue-description" name = "issue-description" rows = "4" cols = "30" required></textarea>
+                    </div>
+
+                    <input type = "submit" id = "submit-button">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        form {
+            margin: auto;
+            margin-top: 2%;
+            text-align: center;
+            justify-content: center;
+            font-size: 1.5em;
+            color: white;
+            border: 3px solid white;
+            border-radius: 15px;
+            width: fit-content;
+            padding: 3%;
+            padding-top: 0%;
+            padding-bottom: 0%;
+        }
+
+        .form-group {
+            color: white;
+            margin-top: 2%;
+            margin: 4%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        #form-type, input {
+            font-size: 0.8em;
+            text-align: center;
+            border: 2px solid white;
+            border-radius: 8px;
+        }
+
+        #form-type {
+            padding: 10px;
+            margin-top: 2%;
+        }
+
+        #form-type option {
+            color: black;
+        }
+
+        #submit-button {
+            margin-top: 5%;
+            margin-bottom: 5%;
+            font-size: 1em;
+            padding: 10px 30px;
+            border: 2px solid white;
+            border-radius: 8px;
+            background-color: transparent;
+            color: white;
+            cursor: pointer;
+        }
+
+        #submit-button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        #issue-description-container {
+            display: none;
+            margin-top: 5%;
+        }
+
+        #issue-description-container textarea {
+            border: 2px solid white;
+            border-radius: 8px;
+        }
+
+        #first-name,
+        #last-name,
+        #email,
+        #form-type,
+        #issue-description {
+            font-size: 0.8em;
+            text-align: center;
+            border: 2px solid white;
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 2%;
+            color: white;
+            background-color: transparent;
+        }
+
+        #first-name,
+        #last-name,
+        #email,
+        #form-type:hover,
+        #issue-description {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        #form-type {
+            width: auto;
+        }
+
+        #issue-description {
+            width: 100%;
+        }
+
+        .background-container {
+            position: relative;
+            width: 100%;
+            height: 100vh; 
+            overflow: hidden;
+        }
+
+        .background-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("background_img1.jpg") center center / cover no-repeat; /* Use the shorthand background property */
+            z-index: -1; 
+        }
+    </style>
+
+    <script>
+        function toggleTextarea() {
+            var dropdown = document.getElementById("form-type");
+            var textarea = document.getElementById("issue-description");
+
+            if (dropdown.value === "website-bug" || dropdown.value === "account-issue" || dropdown.value === "unsubscribe" || dropdown.value === "delete-account" || dropdown.value === "other") {
+                document.getElementById("issue-description-container").style.display = "block";
+            }
+        }
+    </script>
+
+    <script type = "module">
+        import { writeContactFormData } from "./database.js";
+        import { db } from "./constants.js";
+
+        function clearForm() {
+            alert("Your form has been submitted. You will receive a response within 72 hours.");
+            //document.getElementById("formID").reset();
+        }
+
+        function test() {
+            console.log(document.getElementById("first-name").value);
+            alert("yes");
+        }
+
+        function uploadData() {
+            var firstName = document.getElementById("first-name").value;
+            var lastName = document.getElementById("last-name").value;
+            var email = document.getElementById("email").value;
+            var formType = document.getElementById("form-type").value;
+            var description = document.getElementById("issue-description").value; 
+            
+            if (firstName.length === 0 || lastName.length === 0 || email.length === 0 || formType.length === 0 || description.length === 0) {
+                alert("All fields are required.");
+                return;
+            }
+
+            writeContactFormData(db, firstName, lastName, email, formType, description);
+            event.preventDefault(); // <--
+            document.getElementById("formID").reset(); // do not get rid of either of these lines the data upload DOES NOT WORK without them idk y
+            alert("Your form has been submitted. You will receive a response within 72 hours.");
+        }
+        //document.getElementById("submit-button").addEventListener("click", writeContactFormData(db, document.getElementById("first-name").value, document.getElementById("last-name").value, document.getElementById("email").value, document.getElementById("form-type").value, document.getElementById("issue-description").value));
+        //document.getElementById("submit-button").addEventListener("click", test);
+        document.getElementById("submit-button").addEventListener("click", uploadData);
+    </script>
+</body>
+</html>

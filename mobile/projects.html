@@ -12,16 +12,32 @@
 <body>
     <div class="background-container">
         <div class="dimmed-overlay">
-            <div class="header">
-                <div class="title">
-                    <h1>OTAP</h1>
-                    <button type = "submit" onclick = "window.location.href = 'login.html'"><img src = "/login icon 2 - Copy.png" class = "option" id = "login-link"></button>
-                </div>
+            <div class = header>
+                <div class = "title">
+                    <div id = "logo-text">
+                        O
+                        T
+                        A
+                        P
+                    </div>
 
+                    <img src = "/OTAP_Logo_Transparent_BG.png">
+
+                    <div id = #logo-link-container>
+                        <a href = "https://discord.gg/Dx9d7nrKT5" id = "discord-logo"> <!--https://discord.gg/Dx9d7nrKT5-->
+                            <img src = "/discord_logo.webp">
+                        </a>
+                        <a href = "https://www.instagram.com/otap.region1/" id = "instagram-logo">
+                        <img src = "/Instagram_icon.png"> 
+                        </a>
+                    </div>
+                </div>
+                
                 <div class="menu">
-                    <a class="option" href="index.html"><strong>Home</strong></a>
-                    <a id="current" class = "option" href = "projects.html"><strong>Projects</strong></a>
-                    <a class = "option" href = "about.html"><strong>About Us</strong></a>
+                    <a id = current class = option href = index.html>Home</a>
+                    <a class = option href = projects.html>Projects</a>
+                    <a class = option href = contact.html>Contact Us</a>
+                    <button type = "submit" onclick = "window.location.href = 'login.html'"><img src = "/login icon 2 - Copy.png" class = "option" id = "login-link"></button>
                 </div>
             </div>
             <div class="projects-header">
@@ -37,5 +53,16 @@
             </div>
         </div>
     </div>
+    <style>
+        .background-container {
+            margin-top: 0;
+            width: 100vw;
+            height: 100vh;
+            background: url("background_img1.jpg") no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
 </body>
 </html>
