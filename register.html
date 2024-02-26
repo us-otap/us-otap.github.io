@@ -25,9 +25,8 @@
                 </div>
 
                 <div class="menu">
-                    <a id = current class = option href = index.html>Home</a>
+                    <a class = option href = index.html>Home</a>
                     <a class = option href = projects.html>Projects</a>
-                    <a class = option href = about.html>About Us</a>
                     <a class = option href = contact.html>Contact Us</a>
                     <button type = "submit" onclick = "window.location.href = 'login.html'"><img src = "login icon 2 - Copy.png" class = "option" id = "login-link"></button>
                 </div>
@@ -68,6 +67,14 @@
             width: 100%;
             height: 100vh; 
             overflow: hidden;
+        }
+
+        @media (max-width: 1900px) { /*css changes for chromebooks*/
+            .background-container {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
         }
 
         .background-container::before {
