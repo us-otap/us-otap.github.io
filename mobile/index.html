@@ -49,7 +49,11 @@
                 </div>
 
                 <div class = "associated-orgs-text">
-                    Affiliated with the <a href = "https://www.diablobees.org">Mount Diablo Beekeepers Association</a> and with <a href = "https://www.troop216bsa.org">Troop 216</a> 
+                    <!--Affiliated with the <a href = "https://www.diablobees.org">Mount Diablo Beekeepers Association</a> and with <a href = "https://www.troop216bsa.org">Troop 216</a> -->
+                    Thank you to our sponsors!
+                    <div class = "associated-orgs-logos-container">
+                        <a href = "https://www.diablobees.org"><img src = "/Screenshot (101).png" id = "beekeepers-logo"></a><a href = "https://www.troop216bsa.org"><img src = "/Screenshot (102).png" id = "troop216-logo"></a>
+                    </div>
                 </div>
             </div>
 
@@ -67,57 +71,75 @@
             <div class = "blurb-container">
                 <div class = "blurb-title">Meet the team!</div>
                 <div class = "blurb">
-                    <img src = "/blurb_pics\arman_blurb_pic.png">
+                    <img src = "\blurb_pics\arman_blurb_pic.png">
                     <div class = "text-container">
                         <div class = "name-label">Arman Royai</div>
                         <div class = "title-label">President</div>
                         <div class = "title-label">My name is Arman. When I'm not working on setting up projects for OTAP, I like to spend my time playing video games, hiking, and baking.</div>
                     </div>
                 </div>
+
+                <div class = "blurb">
+                    <div class = "text-container">
+                        <div class = "name-label">Callen Kuwahara</div>
+                        <div class = "title-label">Secretary</div>
+                        <div class = "title-label">Callen is an eccentric fellow with a penchant for making things with his own two hands. His abilities range from metalworking to woodworking.</div>
+                    </div>
+                    <img src = "\blurb_pics/callenpfp.jpg">
+                </div>
     
                 <div class = "blurb">
+                    <img src = "\blurb_pics/markpfp.png">
                     <div class = "text-container">
                         <div class = "name-label">Mark Liu</div>
                         <div class = "title-label">Vice President</div>
                         <div class = "title-label">Hi! My name is Mark. I love eating, sleeping, and hanging out with my friends.  I also like reading, and playing piano and badminton.</div>
                     </div>
-                    <img src = "/blurb_pics\mark_blurb_pic.png">
                 </div>
     
                 <div class = "blurb">
-                    <img src = "/blurb_pics\conrad_blurb_pic.png">
                     <div class = "text-container">
                         <div class = "name-label">Conrad Madeira</div>
                         <div class = "title-label">Cheif Financial Officer</div>
                         <div class = "title-label">Hi my name is Conrad and I like cats. My favorite hobby is martial arts, and my favorite plant is a plum blossom tree.</div>
                     </div>
+                    <img src = "\blurb_pics\conrad_blurb_pic.png">
                 </div>
     
                 <div class = "blurb">
+                    <img src = "\blurb_pics\adam_blurb_pic.png">
                     <div class = "text-container">
                         <div class = "name-label">Adam Mazhara</div>
                         <div class = "title-label">Chief Technology Officer</div>
                         <div class = "title-label">I joined this organization to help improve our community by increasing the amount of nature around us in everyday life. My primary job is to run the website, and work on the tech side of things.</div>
                     </div>
-                    <img src = "/blurb_pics\adam_blurb_pic.png">
                 </div>
     
                 <div class = "blurb">
-                    <img src = "/blurb_pics\jack_blurb_pic.png">
                     <div class = "text-container">
                         <div class = "name-label">Jack Naquin</div>
                         <div class = "title-label">Webmaster</div>
-                        <div class = "title-label">My name is Jack. I can bench 225 pounds and my job is to make the website fuctional and look pretty</div>
+                        <div class = "title-label">As the webmaster, I advance our community by optimizing our website for user experience, fostering engagement through interactive platforms, and prioritizing online safety and security.</div>
                     </div>
+                    <img src = "\blurb_pics\jack_blurb_pic.png">
                 </div>
     
                 <div class = "blurb">
+                    <img src = "\blurb_pics/alexpfp.jpg">
                     <div class = "text-container">
                         <div class = "name-label">Alex Rhee</div>
                         <div class = "title-label">Project Manager</div>
-                        <div class = "title-label">Hi, I'm Alex Rhee. I like music and my favorite color is purple. My mission in this organization is to better our community through nature.</div>
+                        <div class = "title-label">As the project manager, I research and plan our projects to make sure everything runs smoothly and efficiently throughout their duration.</div>
                     </div>
-                    <img src = "/blurb_pics\alex_blurb_pic.png">
+                </div>
+
+                <div class = "blurb">
+                    <div class = "text-container">
+                            <div class = "name-label">Haley Li</div>
+                            <div class = "title-label">Chapter President</div>
+                            <div class = "title-label">Haley Li is a junior attending Sage Hill School. She enjoys gardening and playing Tetris in her free time. Haley is leading a verticle farming project in order to restore endangered Southern Californian plants.</div>
+                    </div>
+                    <img src = "\blurb_pics\haley_li.png">
                 </div>
             </div> 
         </div>
@@ -169,7 +191,7 @@
     }
 
     .blurb-title {
-        font-size: 2.5em;
+        font-size: 2em;
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -186,7 +208,7 @@
     }
 
     .blurb {
-        display: flexbox;
+        display: flex;
         margin: 5%;
         margin-top: 0;
         margin-bottom: 0%;
@@ -196,7 +218,7 @@
     .blurb img {
         border: 4px solid lightgrey;
         border-radius: 3em;
-        height: 250px;
+        height: 150px;
     }
 
     .text-container {
@@ -210,12 +232,12 @@
     }
 
     .name-label {
-        font-size: 2.5em;
+        font-size: 1.25em;
         margin-bottom: 1%;
     }
 
     .title-label {
-        font-size: 1em;
+        font-size: 0.75em;
         background: rgba(0, 40, 0, 0.5);
         color: white;
         width: 100%;
@@ -228,8 +250,29 @@
     }
 
     .text-container p {
-        font-size: 1em; 
+        font-size: 0.75em; 
         padding: 2%;
+    }
+
+    .associated-orgs-text {
+        font-size: 0.5em;
+        margin-top: 4%;
+    }
+
+    #associated-orgs-logos-container {
+        margin-top: 3%;
+    }
+
+    #beekeepers-logo {
+        height: 70px;
+        border-radius: 8%;
+        margin-top: 1%;
+    }
+
+    #troop216-logo {
+        height: 70px;
+        border-radius: 8%;
+        margin-left: 1%;
     }
 </style>
 </html>
