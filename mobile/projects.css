@@ -179,7 +179,7 @@
     margin: 0.2em 0;
 }
 
-button {
+.project button {
     position: relative;
     background: #444;
     color: #fff;
