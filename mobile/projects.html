@@ -39,12 +39,23 @@
             <div class="projects-header">
                 <h2>Projects</h2>
             </div>
-            <div class="projects-list">
-                <div class="project">
-                    <button onclick="location.href='proj1.html';" style="--clr:#39FF14"><span>Project 1</span><i></i></button>
+            <div class = "project-blurb-container">
+                <div class = "project-blurb">
+                    <h1>The Bench Project</h1>
+                    <h3>Location: Lafayette Community Garden</h3>
+                    <p>We are working in conjunction with the Mount Diablo Bee Keeper's Association to build benches at Lafayette Community Garden! This project aims to provide a place for gardeners, bee keepers, and visitors alike to relax and observe the bees at the garden.</p>
+                    <a href = "https://docs.google.com/forms/d/e/1FAIpQLScUkeRXOj-6GC2LI_cDHGt_t_njIhHKXGLirEWKPlVsWumVmg/viewform?usp=sf_link">
+                        <button>Sign Up</button>
+                    </a>
                 </div>
-                <div class="project">
-                    <button onclick="location.href='proj2.html';" style="--clr:#39FF14"><span>Project 2</span><i></i></button>
+
+                <div class = "project-blurb">
+                    <h1>Revival Garden</h1>
+                    <h3>Location: ---</h3>
+                    <p>In this upcoming project, we will cultivate a garden dedicated to reviving and repopulating endangered plant species! Some local endangered plants we plan on saving are the Mount Diablo Buckwheat and Mount Diablo Fairy Lantern.</p>
+                    <a href = "https://docs.google.com/forms/d/e/1FAIpQLScUkeRXOj-6GC2LI_cDHGt_t_njIhHKXGLirEWKPlVsWumVmg/viewform?usp=sf_link">
+                        <button>Sign Up</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -159,6 +170,44 @@
         .text-container p {
             font-size: 1em; 
             padding: 2%;
+        }
+
+        .project-blurb-container {
+            text-align: center;
+            color:white;
+            padding: 5%;
+        }
+
+        .project-blurb {
+            margin: auto;
+            margin-bottom: 5%;
+            width: 50%;
+            border: 2px white solid;
+            border-radius: 20px;
+            padding: 2%;
+            padding-bottom: 1%;
+        }
+
+        .project-blurb p {
+            font-size: 1.25em;
+        }
+
+        .project-blurb button {
+            margin-top: 5%;
+            margin-bottom: 5%;
+            font-size: 1em;
+            padding: 10px 30px;
+            border: 2px solid white;
+            border-radius: 8px;
+            background-color: transparent;
+            color: white;
+            cursor: pointer;
+        }
+
+        .project-blurb button:hover {
+            background-color: white;
+            color: black;
+            transition: padding 0.3s;
         }
     </style>
 </body>
